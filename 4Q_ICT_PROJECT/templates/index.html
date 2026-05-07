@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Classmates</title>
+
+    <style>
+        body{
+            font-family: Arial;
+            background: #e5e5e5;
+            margin: 0;
+        }
+
+        nav{
+            background: #1f1f1f;
+            padding: 15px;
+            text-align: right;
+        }
+
+        nav a{
+            color: white;
+            text-decoration: none;
+            margin: 15px;
+            font-weight: bold;
+        }
+
+        .container{
+            width: 80%;
+            margin: auto;
+            margin-top: 30px;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        input, button{
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        button{
+            background: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <a href="index.html">Classmates</a>
+    <a href="attendance.html">Attendance Tracker</a>
+    <a href="gallery.html">Gallery</a>
+</nav>
+
+<div class="container">
+
+    <h1>Classmates List</h1>
+
+    <input id="name" placeholder="Name">
+    <input id="section" placeholder="Section">
+    <input id="subject" placeholder="Favorite Subject">
+
+    <button onclick="add()">Add Classmate</button>
+
+    <div id="output"></div>
+
+</div>
+
+<script>
+    let list = [];
+
+    function add(){
+        let name = document.getElementById("name").value;
+        let section = document.getElementById("section").value;
+        let subject = document.getElementById("subject").value;
+
+        list.push(`${name} - ${section} - ${subject}`);
+
+        document.getElementById("output").innerHTML = list.join("<br>");
+    }
+</script>
+
+</body>
+</html>
